@@ -70,3 +70,10 @@ int main()
 Enter number of elements: 5
 Memory successfully allocated using malloc.
 The elements of the array are: 1, 2, 3, 4, 5,
+
+
+The 42 line in this program calls the malloc function. This function does three things:
+
+The malloc statement first looks at the amount of memory available on the heap and asks, "Is there enough memory available to allocate a block of memory of the size requested?" The amount of memory needed for the block is known from the parameter passed into malloc -- in this case, sizeof(int) is 4 bytes. If there is not enough memory available, the malloc function returns the address zero to indicate the error (another name for zero is NULL and you will see it used throughout C code). Otherwise malloc proceeds.
+If memory is available on the heap, the system "allocates" or "reserves" a block from the heap of the size specified. The system reserves the block of memory so that it isn't accidentally used by more than one malloc statement.
+The system then places into the pointer variable (p, in this case) the address of the reserved block. The pointer variable itself contains an address. The allocated block is able to hold a value of the type specified, and the pointer points to it.
